@@ -1,0 +1,2 @@
+import {describe,expect,it} from 'vitest';import {buildCognition} from '../core/kernel';
+describe('API contract',()=>{it('returns the cognitive result shape',()=>{const r=buildCognition('test objective');expect(r).toHaveProperty('objective');expect(r).toHaveProperty('semanticState');expect(r).toHaveProperty('hypotheses');expect(r).toHaveProperty('plan');expect(r).toHaveProperty('riskScore');expect(r).toHaveProperty('experience')});});
