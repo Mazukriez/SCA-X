@@ -1,178 +1,62 @@
-# SCA-X — Open Cognitive Architecture for State-Based AI
-A NEW AI MODEL CLASS.SCA-X is an experimental cognitive architecture that moves intelligence from token prediction into a persistent semantic state machine: objects, relationships, memory, causal hypotheses, plans, simulation and experience.
+# SCA-X — Semantic Cognitive Architecture Extended
 
-Yes. I took the SCA concept further and built a **new AI model architecture**, not just another LLM wrapper.
+> Stop predicting the next word. Start modelling the next state.
 
-## SCA-X — Semantic Cognitive Architecture Extended
+SCA-X is an open research project exploring persistent semantic state, structured memory, cognitive graphs, causal hypotheses, planning, simulation and experience-driven state transitions.
 
-[Launch the SCA-X Cognitive AI MVP](https://sca-x-cognitive-state-intelligence-a9a3sy.v2.appdeploy.ai/?utm_source=chatgpt.com)
+Status: Research MVP / experimental architecture
 
-### What is different?
+Live MVP: https://sca-x-cognitive-state-intelligence-a9a3sy.v2.appdeploy.ai/
 
-The central idea is:
+SCA-X does not claim to replace LLMs today. The research question is whether useful AI systems can place persistent semantic state and state-transition reasoning at the center of cognition while using neural models as optional perception, extraction, translation, compression, or pattern-recognition components.
 
-> **LLMs predict the next token. SCA-X predicts and evaluates the next state.**
+## Cognitive transition
 
-Instead of making a language model the center of intelligence, SCA-X makes a **persistent cognitive state** the center.
+S(t) + E(t) + G + C → H → P → A → S(t+1)
 
-```text
-                 ┌─────────────────────┐
-                 │   HUMAN / SYSTEM    │
-                 └──────────┬──────────┘
-                            ↓
-                  ┌─────────────────┐
-                  │ SEMANTIC STATE  │
-                  │ objects/events  │
-                  │ relations/rules │
-                  └────────┬────────┘
-                           ↓
-                  ┌─────────────────┐
-                  │ COGNITIVE GRAPH │
-                  └────────┬────────┘
-                           ↓
-              ┌─────────────────────────┐
-              │     EXPERIENCE MEMORY   │
-              │ facts / episodes /      │
-              │ procedures / outcomes   │
-              └───────────┬─────────────┘
-                          ↓
-                  ┌─────────────────┐
-                  │ REASONING KERNEL│
-                  │ hypotheses      │
-                  │ causality       │
-                  │ constraints     │
-                  └────────┬────────┘
-                           ↓
-                  ┌─────────────────┐
-                  │ ACTION MODEL    │
-                  │ plan → simulate │
-                  │ → score → act   │
-                  └────────┬────────┘
-                           ↓
-                     REAL WORLD
-                           │
-                           ↓
-                    EXPERIENCE
-                           ↺
-```
+S(t) = current state; E(t) = evidence; G = goal; C = constraints; H = hypotheses; P = plans; A = action; S(t+1) = resulting state.
 
-### The important architectural change
+## Repository
 
-SCA-X can still use neural models, including LLMs, **where they are useful**:
+core/ contains the cognitive engine. backend/ contains the HTTP adapter. src/ contains the research UI. protocols/ contains the Semantic Object Protocol. docs/ contains architecture and engineering guides. research/ contains the whitepaper, hypotheses and benchmark plan. tests/ contains automated tests. .github/ contains CI and contribution templates.
 
-* perception
-* language translation
-* semantic extraction
-* pattern recognition
-* compression
+## Quick start
 
-But the LLM is **not the authoritative reasoning engine**.
+Requirements: Node.js 20+ and npm 10+.
 
-The MVP's cognitive kernel currently performs:
+    git clone https://github.com/Mazukriez/SCA-X.git
+    cd SCA-X
+    npm install
+    npm test
+    npm run dev
 
-1. **Semantic state construction**
-2. **Entity and constraint identification**
-3. **Hypothesis generation**
-4. **Evidence evaluation**
-5. **Risk calculation**
-6. **Action planning**
-7. **Experience formation**
+## Current MVP
 
-The neural semanticizer is optional; the deterministic cognitive path continues if it fails.
+The reference MVP demonstrates semantic state construction, entity/constraint/signal extraction, competing hypotheses, candidate plans, risk scoring, reasoning traces, experience records and optional neural semantic enrichment.
 
-### MVP capabilities
+The current kernel is deliberately deterministic and transparent. It is a reference implementation, not a trained foundation model.
 
-The live system lets you enter problems such as:
+## Research sequence
 
-> "Investigate a suspicious PowerShell execution on a critical server"
+1. Semantic Object Protocol
+2. Cognitive State Graph
+3. Persistent memory
+4. Reasoning operators
+5. State-transition algebra
+6. Planning
+7. Simulation
+8. Experience learning
+9. Benchmarks
+10. Multi-agent cognition
 
-and constructs:
+## Contribution
 
-**Semantic state**
+Read CONTRIBUTING.md and start with a good-first-issue, help-wanted, documentation, security or research task.
 
-`PowerShell → Critical Server → Process → Identity`
+## Limitation
 
-**Hypotheses**
+Advantages over LLM-centric systems are hypotheses to be measured, not established claims.
 
-* legitimate administrative activity
-* malicious execution chain
-* compromised privileged identity
+## License
 
-**Reasoning trace**
-
-```text
-Objective
-   ↓
-Semantic objects
-   ↓
-Cognitive graph
-   ↓
-Competing hypotheses
-   ↓
-Evidence evaluation
-   ↓
-Risk assessment
-   ↓
-Minimum-risk action plan
-   ↓
-Experience
-```
-
-It also has a second reasoning mode for:
-
-> AWS → GCP migration
-
-where the system shifts to dependency mapping, control parity, canary migration and rollback reasoning.
-
-## The proposed new model class
-
-I'd define it as:
-
-### **Cognitive State Model — CSM**
-
-SCA-X is the first implementation architecture.
-
-The fundamental unit isn't a token.
-
-It isn't even a document.
-
-It is a:
-
-> **Cognitive State Transition**
-
-Formally:
-
-**S(t) + E(t) + G + C → H → P → A → S(t+1)**
-
-Where:
-
-* **S(t)** = current cognitive state
-* **E(t)** = new experience/evidence
-* **G** = objective/goal
-* **C** = constraints
-* **H** = competing hypotheses
-* **P** = candidate plans
-* **A** = selected action
-* **S(t+1)** = resulting state
-
-That gives us a potentially much broader research direction than simply building another AI agent.
-
-### Long-term architecture
-
-The eventual SCA-X platform could evolve into:
-
-**SCA-X Core**
-
-→ Semantic Object Protocol
-→ Cognitive Graph Engine
-→ Memory Engine
-→ Causal Reasoning Engine
-→ World Model
-→ Simulation Engine
-→ Agent Runtime
-→ Experience Learning
-→ Multi-Agent Cognitive Network
-
-This is also where your earlier **Tokenless AI Architecture**, **AI Agent browser**, **AI cybersecurity workforce**, **SOC agents**, and **AI Experience** concepts can converge into one technical architecture rather than remaining separate products.
-
-The current MVP is live and has passed deployment QA with **no frontend or backend errors**.
+Apache License 2.0.
